@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:sweat_squad/res/components/onboard/onboard_first_session.dart';
 import 'package:sweat_squad/res/components/onboard/onboard_second_session.dart';
+import 'package:sweat_squad/view/splash/splash_view.dart';
 
 class OnboardView extends StatefulWidget {
   const OnboardView({super.key});
@@ -28,7 +27,7 @@ class _OnboardViewState extends State<OnboardView> {
             child: PageView(
               controller: controller,
               onPageChanged: (value) {
-                setState(() => isLastPage = value == 4);
+                setState(() => isLastPage = value == 3);
               },
               children: [
                 OnboardFirstSession(
@@ -75,24 +74,27 @@ class _OnboardViewState extends State<OnboardView> {
                     curve: Curves.easeInOut,
                   ),
                   effect: ExpandingDotsEffect(
-                    activeDotColor: theme.colorScheme.primary,
-                    dotColor: theme.colorScheme.secondary,
+                    activeDotColor: const Color(0xffFE7234),
+                    dotColor: const Color(0xffFE7234).withOpacity(.4),
                   ),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: theme.colorScheme.primary,
+                    backgroundColor: const Color(0xffFE7234),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                   onPressed: () {
-                    controller.nextPage(
-                      duration: const Duration(milliseconds: 250),
-                      curve: Curves.easeIn,
-                    );
-                    print('trursdlgkje');
-                    isLastPage ? print('true') : print('false');
+                    isLastPage
+                        ? Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => const SplashView()))
+                        : controller.nextPage(
+                            duration: const Duration(milliseconds: 250),
+                            curve: Curves.easeIn,
+                          );
                   },
                   child: Icon(
                     Icons.arrow_forward_ios_rounded,
