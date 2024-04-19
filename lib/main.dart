@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sweat_squad/view/onboard/onbaoard_view.dart';
+import 'package:sweat_squad/res/theme.dart';
+import 'package:sweat_squad/res/components/bottom_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,13 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sweat Squad',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xffFE7234),
-        ),
-        useMaterial3: true,
-      ),
-      home: const OnboardView(),
+      theme: lightTheme,
+      home: const BottomBar(),
     );
   }
 }

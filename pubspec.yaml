@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   smooth_page_indicator: ^1.1.0
   gap: ^3.0.1
+  google_nav_bar: ^5.0.6
+  line_icons: ^2.0.3
 
 dev_dependencies:
   flutter_test:
