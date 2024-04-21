@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:sweat_squad/view/home/home_view.dart';
+import 'package:sweat_squad/view/leaderboard/leaderboard_view.dart';
+import 'package:sweat_squad/view/profile/profile_view.dart';
+import 'package:sweat_squad/view/search/search_view.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -13,6 +16,10 @@ class _BottomBarState extends State<BottomBar> {
   int currentIndex = 0;
   final List pages = [
     const HomeView(),
+    const SearchView(),
+    const LeaderboardView(),
+    const ProfileView(),
+    const ProfileView(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,7 @@ class _BottomBarState extends State<BottomBar> {
       body: pages[currentIndex],
       bottomNavigationBar: Container(
         padding: const EdgeInsets.symmetric(
-          horizontal: 16,
+          horizontal: 8,
           vertical: 12,
         ),
         child: GNav(
@@ -36,8 +43,8 @@ class _BottomBarState extends State<BottomBar> {
           activeColor: theme.colorScheme.onPrimary,
           tabBackgroundColor: theme.colorScheme.primary,
           backgroundColor: theme.colorScheme.background,
-          gap: 8,
-          iconSize: 30,
+          gap: 7,
+          iconSize: 24,
           padding: const EdgeInsets.all(12),
           tabs: const [
             GButton(
@@ -49,8 +56,12 @@ class _BottomBarState extends State<BottomBar> {
               text: 'Search',
             ),
             GButton(
+              icon: Icons.add_box_rounded,
+              iconSize: 30,
+            ),
+            GButton(
               icon: Icons.leaderboard,
-              text: 'Leaderboard',
+              text: 'Ranking',
             ),
             GButton(
               icon: Icons.person,
