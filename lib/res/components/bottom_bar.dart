@@ -4,6 +4,7 @@ import 'package:sweat_squad/view/home/home_view.dart';
 import 'package:sweat_squad/view/leaderboard/leaderboard_view.dart';
 import 'package:sweat_squad/view/profile/profile_view.dart';
 import 'package:sweat_squad/view/search/search_view.dart';
+import 'package:sweat_squad/view/upload/upload_challenge_view.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -16,9 +17,9 @@ class _BottomBarState extends State<BottomBar> {
   int currentIndex = 0;
   final List pages = [
     const HomeView(),
-    const SearchView(),
+    SearchView(),
+    const UploadChallengeView(),
     const LeaderboardView(),
-    const ProfileView(),
     const ProfileView(),
   ];
   @override

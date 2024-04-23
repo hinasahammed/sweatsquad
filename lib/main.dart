@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sweat_squad/res/theme.dart';
 import 'package:sweat_squad/res/components/bottom_bar.dart';
+import 'package:sweat_squad/res/theme.dart';
 
 void main() {
   runApp(const MyApp());

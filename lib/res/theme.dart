@@ -6,6 +6,7 @@ ThemeData lightTheme = ThemeData(
     seedColor: const Color(0xffFE7234),
     background: const Color(0xffe8e8e4),
   ),
+  scaffoldBackgroundColor: const Color(0xffe8e8e4),
   appBarTheme: const AppBarTheme(
     backgroundColor: Color(0xffe8e8e4),
   ),
