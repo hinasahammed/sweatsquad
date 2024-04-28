@@ -3,8 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:sweat_squad/res/components/custom_button.dart';
 import 'package:sweat_squad/res/components/custom_text_form_field.dart';
 
-class SignupView extends StatelessWidget {
-  const SignupView({super.key});
+class EditProfileView extends StatelessWidget {
+  const EditProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,9 @@ class SignupView extends StatelessWidget {
             height: size.height,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/One Piece.jpeg'),
+                image: NetworkImage(
+                  'https://i.pinimg.com/564x/ce/67/52/ce67525bcc1ccb74286f3f9fb29d8f24.jpg',
+                ),
                 alignment: Alignment.topCenter,
                 fit: BoxFit.fitWidth,
               ),
@@ -40,18 +42,17 @@ class SignupView extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'Join the Sweat Squad',
+                      'Edit Your Profile',
                       style: theme.textTheme.titleLarge!.copyWith(
                         color: theme.colorScheme.onBackground,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Text(
-                      'Unlock Your Fitness Journey - Create Your Account',
+                      'Motivate yourself and others. Update your bio and share your fitness goals!',
                       style: theme.textTheme.bodyLarge!.copyWith(
                         color: theme.colorScheme.onBackground,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                     const Gap(10),
                     Stack(
@@ -90,56 +91,25 @@ class SignupView extends StatelessWidget {
                         )
                       ],
                     ),
+                    const Gap(10),
+                    CustomTextFormfield(
+                      controller: TextEditingController(),
+                      fieldName: 'Username',
+                    ),
+                    const Gap(10),
+                    CustomTextFormfield(
+                      controller: TextEditingController(),
+                      fieldName: 'Bio',
+                    ),
                     const Gap(20),
-                    CustomTextFormfield(
-                      controller: TextEditingController(),
-                      fieldName: 'User name',
-                    ),
-                    const Gap(10),
-                    CustomTextFormfield(
-                      controller: TextEditingController(),
-                      fieldName: 'Email address',
-                    ),
-                    const Gap(10),
-                    CustomTextFormfield(
-                      controller: TextEditingController(),
-                      fieldName: 'Password',
-                    ),
-                    const Gap(10),
-                    CustomTextFormfield(
-                      controller: TextEditingController(),
-                      fieldName: 'Confirm password',
-                    ),
-                    const Gap(10),
                     SizedBox(
                       width: size.width,
                       height: 50,
                       child: CustomButton(
-                        btnTitle: 'Sign up',
+                        btnTitle: 'Save',
                         onPressed: () {},
                       ),
                     ),
-                    const Gap(10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          "Already have an account?",
-                          style: theme.textTheme.bodyLarge!.copyWith(
-                            color: theme.colorScheme.onBackground,
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Sign in",
-                            style: theme.textTheme.bodyLarge!.copyWith(
-                              color: theme.colorScheme.primary,
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
                   ],
                 ),
               ),

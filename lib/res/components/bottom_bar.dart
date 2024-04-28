@@ -20,7 +20,7 @@ class _BottomBarState extends State<BottomBar> {
     SearchView(),
     const UploadChallengeView(),
     const LeaderboardView(),
-    const ProfileView(),
+    ProfileView(),
   ];
   @override
   Widget build(BuildContext context) {
