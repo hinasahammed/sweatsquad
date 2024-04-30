@@ -40,6 +40,12 @@ dependencies:
   google_nav_bar: ^5.0.6
   line_icons: ^2.0.3
   popover: ^0.3.0
+  firebase_core: ^2.30.1
+  get: ^4.6.6
+  firebase_auth: ^4.19.4
+  awesome_dialog: ^3.2.0
+  image_picker: ^1.1.0
+  another_flushbar: ^1.12.30
 
 dev_dependencies:
   flutter_test:

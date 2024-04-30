@@ -1,9 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:sweat_squad/res/components/bottom_bar.dart';
+import 'package:get/get.dart';
+import 'package:sweat_squad/firebase_options.dart';
 import 'package:sweat_squad/res/theme.dart';
+import 'package:sweat_squad/view/login/login_view.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,11 +21,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Sweat Squad',
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
-      home: const BottomBar(),
+      home: const LoginView(),
     );
   }
 }

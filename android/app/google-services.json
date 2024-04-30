@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "284827574107",
+    "project_id": "sweat-squad",
+    "storage_bucket": "sweat-squad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284827574107:android:05ad2fcc384668434c447e",
+        "android_client_info": {
+          "package_name": "com.example.sweat_squad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTIU-zu1kTMnK-RIvi8uTBNeCQ-PWFSNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

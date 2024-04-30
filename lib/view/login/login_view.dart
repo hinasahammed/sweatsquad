@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sweat_squad/res/components/custom_button.dart';
 import 'package:sweat_squad/res/components/custom_text_form_field.dart';
+import 'package:sweat_squad/view/signup/signup_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -93,7 +94,14 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (ctx) =>  SignupView(),
+                            ),
+                          );
+                        },
                         child: Text(
                           "Sign up",
                           style: theme.textTheme.bodyLarge!.copyWith(

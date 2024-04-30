@@ -178,6 +178,7 @@ class LeaderboardView extends StatelessWidget {
                   child: ListTile(
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: 10,
+                      vertical: 6,
                     ),
                     leading: Text(
                       '${index + 4}',
@@ -201,7 +202,12 @@ class LeaderboardView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    trailing: const Text('30'),
+                    trailing: Text(
+                      '30',
+                      style: theme.textTheme.labelLarge!.copyWith(
+                        color: theme.colorScheme.onBackground,
+                      ),
+                    ),
                   ),
                 );
               },
