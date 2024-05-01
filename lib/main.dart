@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sweat_squad/firebase_options.dart';
+import 'package:sweat_squad/res/components/bottom_bar.dart';
 import 'package:sweat_squad/res/theme.dart';
 import 'package:sweat_squad/view/login/login_view.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Sweat Squad',
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
-      home: const LoginView(),
+      home: const BottomBar(),
     );
   }
 }
