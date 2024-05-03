@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:sweat_squad/res/components/custom_button.dart';
 import 'package:sweat_squad/res/components/custom_text_form_field.dart';
-import 'package:sweat_squad/view/signup/signup_view.dart';
+import 'package:sweat_squad/res/routes/routes_name.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -97,12 +98,7 @@ class LoginView extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (ctx) => SignupView(),
-                                ),
-                              );
+                              Get.toNamed(RoutesName.signup);
                             },
                             child: Text(
                               "Sign up",

@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:sweat_squad/res/components/custom_button.dart';
 import 'package:sweat_squad/res/components/custom_text_form_field.dart';
+import 'package:sweat_squad/res/routes/routes_name.dart';
 import 'package:sweat_squad/viewmodel/controller/signup/signup_viewmodel.dart';
 import 'package:sweat_squad/viewmodel/services/signup_services.dart';
 
@@ -186,7 +187,7 @@ class SignupView extends StatelessWidget {
                             btnTitle: 'Sign up',
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
-                                signupViewmodel.registerUser(context);
+                                
                               }
                             },
                           ),
@@ -202,7 +203,9 @@ class SignupView extends StatelessWidget {
                               ),
                             ),
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed(RoutesName.login);
+                              },
                               child: Text(
                                 "Sign in",
                                 style: theme.textTheme.bodyLarge!.copyWith(
