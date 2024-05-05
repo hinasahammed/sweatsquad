@@ -7,7 +7,7 @@ class Routes {
   static getRoute() => [
         GetPage(
           name: RoutesName.login,
-          page: () => const LoginView(),
+          page: () => LoginView(),
         ),
         GetPage(
           name: RoutesName.signup,

@@ -146,19 +146,19 @@ class SignupView extends StatelessWidget {
                             if (value.length < 6) {
                               return 'Your password is too short!';
                             }
-                            // if (!value.contains(RegExp(r'[A-Z]'))) {
-                            //   return 'Uppercase must contain';
-                            // }
-                            // if (!value.contains(RegExp(r'[a-z]'))) {
-                            //   return 'lowercase must contain';
-                            // }
-                            // if (!value.contains(RegExp(r'[0-9]'))) {
-                            //   return 'digits must contain';
-                            // }
-                            // if (!value
-                            //     .contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
-                            //   return 'Special chareacter must contain';
-                            // }
+                            if (!value.contains(RegExp(r'[A-Z]'))) {
+                              return 'Uppercase must contain';
+                            }
+                            if (!value.contains(RegExp(r'[a-z]'))) {
+                              return 'lowercase must contain';
+                            }
+                            if (!value.contains(RegExp(r'[0-9]'))) {
+                              return 'digits must contain';
+                            }
+                            if (!value
+                                .contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+                              return 'Special chareacter must contain';
+                            }
                             return null;
                           },
                           fieldName: 'Password',
@@ -184,10 +184,11 @@ class SignupView extends StatelessWidget {
                           width: size.width,
                           height: 50,
                           child: CustomButton(
+                            status: signupViewmodel.reqStatusResponse.value,
                             btnTitle: 'Sign up',
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
-                                
+                                signupViewmodel.signup(context);
                               }
                             },
                           ),

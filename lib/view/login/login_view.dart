@@ -4,117 +4,131 @@ import 'package:get/get.dart';
 import 'package:sweat_squad/res/components/custom_button.dart';
 import 'package:sweat_squad/res/components/custom_text_form_field.dart';
 import 'package:sweat_squad/res/routes/routes_name.dart';
+import 'package:sweat_squad/viewmodel/controller/login/login_viewmodel.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+  LoginView({super.key});
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    final loginViewmodel = Get.put(LoginViewmodel());
     final theme = Theme.of(context);
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SafeArea(
-        child: Stack(
-          children: [
-            Container(
-              width: size.width,
-              height: size.height,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/baki.jpg'),
-                  alignment: Alignment.topCenter,
-                  fit: BoxFit.fitWidth,
+        child: Obx(
+          () => Stack(
+            children: [
+              Container(
+                width: size.width,
+                height: size.height,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/baki.jpg'),
+                    alignment: Alignment.topCenter,
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
               ),
-            ),
-            Positioned(
-              bottom: 0,
-              child: Container(
-                width: size.width,
-                height: size.height * .52,
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(25),
+              Positioned(
+                bottom: 0,
+                child: Container(
+                  width: size.width,
+                  height: size.height * .52,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(25),
+                    ),
+                    color: theme.colorScheme.background,
                   ),
-                  color: theme.colorScheme.background,
-                ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Text(
-                        'Welcome back!',
-                        style: theme.textTheme.titleLarge!.copyWith(
-                          color: theme.colorScheme.onBackground,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        'Login to your account',
-                        style: theme.textTheme.bodyLarge!.copyWith(
-                          color: theme.colorScheme.onBackground,
-                        ),
-                      ),
-                      const Gap(10),
-                      CustomTextFormfield(
-                        controller: TextEditingController(),
-                        fieldName: 'Email address',
-                      ),
-                      const Gap(10),
-                      CustomTextFormfield(
-                        controller: TextEditingController(),
-                        fieldName: 'Password',
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Forget your password?",
-                            style: theme.textTheme.labelLarge!.copyWith(
-                              color: theme.colorScheme.onBackground,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Gap(5),
-                      SizedBox(
-                        width: size.width,
-                        height: 50,
-                        child: CustomButton(
-                          btnTitle: 'Login',
-                          onPressed: () {},
-                        ),
-                      ),
-                      const Gap(10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  child: SingleChildScrollView(
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
                         children: [
                           Text(
-                            "Don't have an account?",
+                            'Welcome back!',
+                            style: theme.textTheme.titleLarge!.copyWith(
+                              color: theme.colorScheme.onBackground,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            'Login to your account',
                             style: theme.textTheme.bodyLarge!.copyWith(
                               color: theme.colorScheme.onBackground,
                             ),
                           ),
-                          TextButton(
-                            onPressed: () {
-                              Get.toNamed(RoutesName.signup);
-                            },
-                            child: Text(
-                              "Sign up",
-                              style: theme.textTheme.bodyLarge!.copyWith(
-                                color: theme.colorScheme.primary,
+                          const Gap(10),
+                          CustomTextFormfield(
+                            controller: loginViewmodel.emailController.value,
+                            fieldName: 'Email address',
+                          ),
+                          const Gap(10),
+                          CustomTextFormfield(
+                            controller: loginViewmodel.passwordController.value,
+                            fieldName: 'Password',
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "Forget your password?",
+                                style: theme.textTheme.labelLarge!.copyWith(
+                                  color: theme.colorScheme.onBackground,
+                                ),
                               ),
                             ),
                           ),
+                          const Gap(5),
+                          SizedBox(
+                            width: size.width,
+                            height: 50,
+                            child: CustomButton(
+                              btnTitle: 'Login',
+                              status: loginViewmodel.reqStatusResponse.value,
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {
+                                  loginViewmodel.login(context);
+                                }
+                              },
+                            ),
+                          ),
+                          const Gap(10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                "Don't have an account?",
+                                style: theme.textTheme.bodyLarge!.copyWith(
+                                  color: theme.colorScheme.onBackground,
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Get.toNamed(RoutesName.signup);
+                                },
+                                child: Text(
+                                  "Sign up",
+                                  style: theme.textTheme.bodyLarge!.copyWith(
+                                    color: theme.colorScheme.primary,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
                         ],
-                      )
-                    ],
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

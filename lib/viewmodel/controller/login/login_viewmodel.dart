@@ -1,38 +1,28 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sweat_squad/data/response/status.dart';
-import 'package:sweat_squad/repo/signupRepo/signup_repo.dart';
+import 'package:sweat_squad/repo/loginRepo/login_repo.dart';
 import 'package:sweat_squad/utils/utils.dart';
 
-class SignupViewmodel extends GetxController {
-  final userNameController = TextEditingController().obs;
+class LoginViewmodel extends GetxController {
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
-  final confirmPasswordController = TextEditingController().obs;
-  final selectedImage = File('').obs;
   final reqStatusResponse = Status.completed.obs;
-  final repo = SignupRepository();
+  final repo = LoginRepository();
 
   setReqStatusResponse(Status status) {
     reqStatusResponse.value = status;
   }
 
-  void signup(BuildContext context) async {
+  void login(BuildContext context) async {
     setReqStatusResponse(Status.loading);
-
-    await repo.postApi({
-      "username": userNameController.value.text,
+    await repo.login({
       "email": emailController.value.text,
       "password": passwordController.value.text,
     }).then((value) {
-      userNameController.value.clear();
       emailController.value.clear();
       passwordController.value.clear();
-      confirmPasswordController.value.clear();
-
-      Utils.showSnackbarToast(context, value['message'], Icons.check_circle);
+      Utils.showSnackbarToast(context, 'Login successfull', Icons.check_circle);
     }).onError((error, stackTrace) {
       Utils.showSnackbarToast(context, error.toString(), Icons.error);
     }).whenComplete(() {
