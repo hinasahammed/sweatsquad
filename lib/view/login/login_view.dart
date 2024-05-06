@@ -65,17 +65,53 @@ class LoginView extends StatelessWidget {
                           const Gap(10),
                           CustomTextFormfield(
                             controller: loginViewmodel.emailController.value,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Enter email address';
+                              }
+                              if (!RegExp(
+                                      r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
+                                  .hasMatch(loginViewmodel
+                                      .emailController.value.text)) {
+                                return 'Enter a valid email address';
+                              }
+                              return null;
+                            },
                             fieldName: 'Email address',
                           ),
                           const Gap(10),
                           CustomTextFormfield(
                             controller: loginViewmodel.passwordController.value,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Enter a password';
+                              }
+                              if (value.length < 6) {
+                                return 'Your password is too short!';
+                              }
+                              if (!value.contains(RegExp(r'[A-Z]'))) {
+                                return 'Uppercase must contain';
+                              }
+                              if (!value.contains(RegExp(r'[a-z]'))) {
+                                return 'lowercase must contain';
+                              }
+                              if (!value.contains(RegExp(r'[0-9]'))) {
+                                return 'digits must contain';
+                              }
+                              if (!value.contains(
+                                  RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+                                return 'Special chareacter must contain';
+                              }
+                              return null;
+                            },
                             fieldName: 'Password',
                           ),
                           Align(
                             alignment: Alignment.centerRight,
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed(RoutesName.reset);
+                              },
                               child: Text(
                                 "Forget your password?",
                                 style: theme.textTheme.labelLarge!.copyWith(

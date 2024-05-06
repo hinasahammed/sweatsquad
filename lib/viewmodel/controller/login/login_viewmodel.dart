@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sweat_squad/data/response/status.dart';
 import 'package:sweat_squad/repo/loginRepo/login_repo.dart';
 import 'package:sweat_squad/utils/utils.dart';
@@ -15,6 +16,7 @@ class LoginViewmodel extends GetxController {
   }
 
   void login(BuildContext context) async {
+    final pref = await SharedPreferences.getInstance();
     setReqStatusResponse(Status.loading);
     await repo.login({
       "email": emailController.value.text,
@@ -22,6 +24,9 @@ class LoginViewmodel extends GetxController {
     }).then((value) {
       emailController.value.clear();
       passwordController.value.clear();
+      if (value['token'] != null) {
+        pref.setString('Auth_token', value['token']);
+      }
       Utils.showSnackbarToast(context, 'Login successfull', Icons.check_circle);
     }).onError((error, stackTrace) {
       Utils.showSnackbarToast(context, error.toString(), Icons.error);

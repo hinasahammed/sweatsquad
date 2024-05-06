@@ -5,7 +5,7 @@ import 'package:sweat_squad/res/components/custom_button.dart';
 import 'package:sweat_squad/res/components/custom_text_form_field.dart';
 import 'package:sweat_squad/res/routes/routes_name.dart';
 import 'package:sweat_squad/viewmodel/controller/signup/signup_viewmodel.dart';
-import 'package:sweat_squad/viewmodel/services/signup_services.dart';
+import 'package:sweat_squad/viewmodel/services/signup/signup_services.dart';
 
 class SignupView extends StatelessWidget {
   SignupView({super.key});

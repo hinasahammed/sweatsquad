@@ -1,7 +1,6 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Utils {
   static void showDialog(
@@ -24,9 +23,7 @@ class Utils {
       animType: AnimType.rightSlide,
       title: title,
       desc: desc,
-      btnCancelOnPress: () {
-        Get.back();
-      },
+      btnCancelOnPress: () {},
       btnOkOnPress: btnOkOnPress,
     ).show();
   }

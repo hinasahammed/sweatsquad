@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sweat_squad/assets/images/image_asset.dart';
+import 'package:sweat_squad/viewmodel/services/splash/splash_services.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -9,6 +10,12 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    SplashServices.checkUserLogedIn();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

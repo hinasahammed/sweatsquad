@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sweat_squad/view/editProfile/edit_profile_view.dart';
+import 'package:sweat_squad/viewmodel/services/settings/settings_services.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -60,15 +61,18 @@ class SettingsView extends StatelessWidget {
                 title: Text('Wishlist'),
               ),
             ),
-            const Card(
+            Card(
               child: ListTile(
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                leading: CircleAvatar(
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                onTap: () {
+                  SettingsServices.confirmLogout(context);
+                },
+                leading: const CircleAvatar(
                   radius: 25,
                   backgroundImage: AssetImage('assets/icons/logout.png'),
                 ),
-                title: Text('Logout'),
+                title: const Text('Logout'),
               ),
             ),
           ],
