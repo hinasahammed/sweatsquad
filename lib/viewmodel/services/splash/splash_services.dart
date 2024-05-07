@@ -7,9 +7,9 @@ class SplashServices {
     final pref = await SharedPreferences.getInstance();
     var token = pref.getString('Auth_token');
     if (token != null) {
-      Get.toNamed(RoutesName.bottomBar);
+      Get.offAllNamed(RoutesName.bottomBar);
     } else {
-      Get.toNamed(RoutesName.login);
+      Get.offAllNamed(RoutesName.login);
     }
   }
 }

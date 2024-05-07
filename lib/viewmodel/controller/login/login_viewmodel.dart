@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sweat_squad/data/response/status.dart';
 import 'package:sweat_squad/repo/loginRepo/login_repo.dart';
+import 'package:sweat_squad/res/routes/routes_name.dart';
 import 'package:sweat_squad/utils/utils.dart';
 
 class LoginViewmodel extends GetxController {
@@ -27,6 +29,7 @@ class LoginViewmodel extends GetxController {
       if (value['token'] != null) {
         pref.setString('Auth_token', value['token']);
       }
+      Get.offAllNamed(RoutesName.bottomBar);
       Utils.showSnackbarToast(context, 'Login successfull', Icons.check_circle);
     }).onError((error, stackTrace) {
       Utils.showSnackbarToast(context, error.toString(), Icons.error);
