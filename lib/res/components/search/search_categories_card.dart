@@ -43,7 +43,7 @@ class SearchCategoriesCard extends StatelessWidget {
             Text(
               title,
               style: theme.textTheme.titleLarge!.copyWith(
-                color: theme.colorScheme.background,
+                color: theme.colorScheme.surface,
                 fontWeight: FontWeight.bold,
               ),
             ),

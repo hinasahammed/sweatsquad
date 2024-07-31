@@ -35,21 +35,21 @@ class ResetPasswordView extends StatelessWidget {
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(25),
                 ),
-                color: theme.colorScheme.background,
+                color: theme.colorScheme.surface,
               ),
               child: Column(
                 children: [
                   Text(
                     'Reset Password',
                     style: theme.textTheme.titleLarge!.copyWith(
-                      color: theme.colorScheme.onBackground,
+                      color: theme.colorScheme.onSurface,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
                     "We'll send you a link to reset your password",
                     style: theme.textTheme.bodyLarge!.copyWith(
-                      color: theme.colorScheme.onBackground,
+                      color: theme.colorScheme.onSurface,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -74,7 +74,7 @@ class ResetPasswordView extends StatelessWidget {
                       Text(
                         "Go back to",
                         style: theme.textTheme.bodyLarge!.copyWith(
-                          color: theme.colorScheme.onBackground,
+                          color: theme.colorScheme.onSurface,
                         ),
                       ),
                       TextButton(

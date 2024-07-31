@@ -19,21 +19,21 @@ class OnboardFirstSession extends StatelessWidget {
           Text(
             'Welcome to SweatSquad',
             style: theme.textTheme.titleLarge!.copyWith(
-              color: theme.colorScheme.onBackground,
+              color: theme.colorScheme.onSurface,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             'Get Fit & Have Fun!',
             style: theme.textTheme.bodyLarge!.copyWith(
-              color: theme.colorScheme.onBackground,
+              color: theme.colorScheme.onSurface,
               fontWeight: FontWeight.w600,
             ),
           ),
           Text(
             'Take your fitness journey to the next level',
             style: theme.textTheme.bodyLarge!.copyWith(
-              color: theme.colorScheme.onBackground.withOpacity(.6),
+              color: theme.colorScheme.onSurface.withOpacity(.6),
             ),
             textAlign: TextAlign.center,
           ),

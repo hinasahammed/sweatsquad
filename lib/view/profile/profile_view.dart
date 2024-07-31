@@ -70,7 +70,7 @@ class ProfileView extends StatelessWidget {
                         Text(
                           '100\nFollowers',
                           style: theme.textTheme.labelLarge!.copyWith(
-                            color: theme.colorScheme.onBackground,
+                            color: theme.colorScheme.onSurface,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -78,7 +78,7 @@ class ProfileView extends StatelessWidget {
                         Text(
                           '80\nFollowing',
                           style: theme.textTheme.labelLarge!.copyWith(
-                            color: theme.colorScheme.onBackground,
+                            color: theme.colorScheme.onSurface,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -88,7 +88,7 @@ class ProfileView extends StatelessWidget {
                     Text(
                       '5\nChallenges',
                       style: theme.textTheme.labelLarge!.copyWith(
-                        color: theme.colorScheme.onBackground,
+                        color: theme.colorScheme.onSurface,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -100,21 +100,21 @@ class ProfileView extends StatelessWidget {
             Text(
               'David',
               style: theme.textTheme.bodyLarge!.copyWith(
-                color: theme.colorScheme.onBackground,
+                color: theme.colorScheme.onSurface,
                 fontWeight: FontWeight.w500,
               ),
             ),
             Text(
               "Fitness enthusiast passionate about helping others achieve their goals. Let's crush these challenges together!",
               style: theme.textTheme.labelLarge!.copyWith(
-                color: theme.colorScheme.onBackground.withOpacity(.7),
+                color: theme.colorScheme.onSurface.withOpacity(.7),
               ),
             ),
             const Divider(),
             Text(
               'All Post',
               style: theme.textTheme.bodyLarge!.copyWith(
-                color: theme.colorScheme.onBackground,
+                color: theme.colorScheme.onSurface,
                 fontWeight: FontWeight.w500,
               ),
             ),

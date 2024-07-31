@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sweat_squad/data/response/status.dart';
 import 'package:sweat_squad/repo/loginRepo/login_repo.dart';

@@ -6,7 +6,12 @@ class OnboardCommon extends StatelessWidget {
   final String title;
   final String description;
   final PageController controller;
-  const OnboardCommon({super.key, required this.controller, required this.imageUrl, required this.title, required this.description});
+  const OnboardCommon(
+      {super.key,
+      required this.controller,
+      required this.imageUrl,
+      required this.title,
+      required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +27,14 @@ class OnboardCommon extends StatelessWidget {
           Text(
             title,
             style: theme.textTheme.titleLarge!.copyWith(
-              color: theme.colorScheme.onBackground,
+              color: theme.colorScheme.onSurface,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             description,
             style: theme.textTheme.bodyLarge!.copyWith(
-              color: theme.colorScheme.onBackground.withOpacity(.6),
+              color: theme.colorScheme.onSurface.withOpacity(.6),
             ),
             textAlign: TextAlign.center,
           ),

@@ -42,7 +42,7 @@ class NetworkApiService extends BaseApiService {
     } on SocketException {
       throw InternetException('No internet');
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
   }
 
@@ -58,7 +58,7 @@ class NetworkApiService extends BaseApiService {
       ).timeout(
         const Duration(seconds: 30),
       );
-      print(response.statusCode);
+      debugPrint("${response.statusCode}");
       responseJson = returnResponse(response);
       return responseJson;
     } on SocketException {

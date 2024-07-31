@@ -156,14 +156,14 @@ class LeaderboardView extends StatelessWidget {
                 Text(
                   'Name',
                   style: theme.textTheme.bodyLarge!.copyWith(
-                    color: theme.colorScheme.onBackground,
+                    color: theme.colorScheme.onSurface,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 Text(
                   'Point',
                   style: theme.textTheme.bodyLarge!.copyWith(
-                    color: theme.colorScheme.onBackground,
+                    color: theme.colorScheme.onSurface,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -183,7 +183,7 @@ class LeaderboardView extends StatelessWidget {
                     leading: Text(
                       '${index + 4}',
                       style: theme.textTheme.bodyLarge!.copyWith(
-                        color: theme.colorScheme.onBackground,
+                        color: theme.colorScheme.onSurface,
                       ),
                     ),
                     title: Row(
@@ -197,7 +197,7 @@ class LeaderboardView extends StatelessWidget {
                         Text(
                           'Daniel',
                           style: theme.textTheme.labelLarge!.copyWith(
-                            color: theme.colorScheme.onBackground,
+                            color: theme.colorScheme.onSurface,
                           ),
                         ),
                       ],
@@ -205,7 +205,7 @@ class LeaderboardView extends StatelessWidget {
                     trailing: Text(
                       '30',
                       style: theme.textTheme.labelLarge!.copyWith(
-                        color: theme.colorScheme.onBackground,
+                        color: theme.colorScheme.onSurface,
                       ),
                     ),
                   ),

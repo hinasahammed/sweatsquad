@@ -41,7 +41,7 @@ class SignupView extends StatelessWidget {
                   borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(25),
                   ),
-                  color: theme.colorScheme.background,
+                  color: theme.colorScheme.surface,
                 ),
                 child: SingleChildScrollView(
                   child: Form(
@@ -51,14 +51,14 @@ class SignupView extends StatelessWidget {
                         Text(
                           'Join the Sweat Squad',
                           style: theme.textTheme.titleLarge!.copyWith(
-                            color: theme.colorScheme.onBackground,
+                            color: theme.colorScheme.onSurface,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         Text(
                           'Unlock Your Fitness Journey - Create Your Account',
                           style: theme.textTheme.bodyLarge!.copyWith(
-                            color: theme.colorScheme.onBackground,
+                            color: theme.colorScheme.onSurface,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -200,7 +200,7 @@ class SignupView extends StatelessWidget {
                             Text(
                               "Already have an account?",
                               style: theme.textTheme.bodyLarge!.copyWith(
-                                color: theme.colorScheme.onBackground,
+                                color: theme.colorScheme.onSurface,
                               ),
                             ),
                             TextButton(

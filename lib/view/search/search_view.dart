@@ -35,7 +35,7 @@ class SearchView extends StatelessWidget {
             SearchBar(
               controller: TextEditingController(),
               hintText: 'Search',
-              shape: MaterialStatePropertyAll(
+              shape: WidgetStatePropertyAll(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),

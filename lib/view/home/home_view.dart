@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
                   title: Text(
                     'Saitama',
                     style: theme.textTheme.labelLarge!.copyWith(
-                      color: theme.colorScheme.onBackground,
+                      color: theme.colorScheme.onSurface,
                     ),
                   ),
                   trailing: const Icon(Icons.more_vert_outlined),

@@ -19,14 +19,14 @@ class OnboardThirdSession extends StatelessWidget {
           Text(
             'Challenge Friends',
             style: theme.textTheme.titleLarge!.copyWith(
-              color: theme.colorScheme.onBackground,
+              color: theme.colorScheme.onSurface,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             'Push yourself further by challenging your friends to fun workouts.',
             style: theme.textTheme.bodyLarge!.copyWith(
-              color: theme.colorScheme.onBackground.withOpacity(.6),
+              color: theme.colorScheme.onSurface.withOpacity(.6),
             ),
             textAlign: TextAlign.center,
           ),

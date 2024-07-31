@@ -43,7 +43,7 @@ class _BottomBarState extends State<BottomBar> {
           color: theme.colorScheme.primary,
           activeColor: theme.colorScheme.onPrimary,
           tabBackgroundColor: theme.colorScheme.primary,
-          backgroundColor: theme.colorScheme.background,
+          backgroundColor: theme.colorScheme.surface,
           gap: 7,
           iconSize: 24,
           padding: const EdgeInsets.all(12),

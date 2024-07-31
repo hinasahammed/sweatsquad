@@ -42,7 +42,7 @@ class LoginView extends StatelessWidget {
                     borderRadius: const BorderRadius.vertical(
                       top: Radius.circular(25),
                     ),
-                    color: theme.colorScheme.background,
+                    color: theme.colorScheme.surface,
                   ),
                   child: SingleChildScrollView(
                     child: Form(
@@ -52,14 +52,14 @@ class LoginView extends StatelessWidget {
                           Text(
                             'Welcome back!',
                             style: theme.textTheme.titleLarge!.copyWith(
-                              color: theme.colorScheme.onBackground,
+                              color: theme.colorScheme.onSurface,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           Text(
                             'Login to your account',
                             style: theme.textTheme.bodyLarge!.copyWith(
-                              color: theme.colorScheme.onBackground,
+                              color: theme.colorScheme.onSurface,
                             ),
                           ),
                           const Gap(10),
@@ -115,7 +115,7 @@ class LoginView extends StatelessWidget {
                               child: Text(
                                 "Forget your password?",
                                 style: theme.textTheme.labelLarge!.copyWith(
-                                  color: theme.colorScheme.onBackground,
+                                  color: theme.colorScheme.onSurface,
                                 ),
                               ),
                             ),
@@ -141,7 +141,7 @@ class LoginView extends StatelessWidget {
                               Text(
                                 "Don't have an account?",
                                 style: theme.textTheme.bodyLarge!.copyWith(
-                                  color: theme.colorScheme.onBackground,
+                                  color: theme.colorScheme.onSurface,
                                 ),
                               ),
                               TextButton(

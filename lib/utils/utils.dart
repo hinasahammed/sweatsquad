@@ -14,10 +14,10 @@ class Utils {
     AwesomeDialog(
       context: context,
       descTextStyle: theme.textTheme.labelLarge!.copyWith(
-        color: theme.colorScheme.onBackground,
+        color: theme.colorScheme.onSurface,
       ),
       titleTextStyle: theme.textTheme.bodyLarge!.copyWith(
-        color: theme.colorScheme.onBackground,
+        color: theme.colorScheme.onSurface,
       ),
       dialogType: dialogType,
       animType: AnimType.rightSlide,

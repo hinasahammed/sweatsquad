@@ -36,7 +36,7 @@ class EditProfileView extends StatelessWidget {
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(25),
                 ),
-                color: theme.colorScheme.background,
+                color: theme.colorScheme.surface,
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -44,14 +44,14 @@ class EditProfileView extends StatelessWidget {
                     Text(
                       'Edit Your Profile',
                       style: theme.textTheme.titleLarge!.copyWith(
-                        color: theme.colorScheme.onBackground,
+                        color: theme.colorScheme.onSurface,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Text(
                       'Motivate yourself and others. Update your bio and share your fitness goals!',
                       style: theme.textTheme.bodyLarge!.copyWith(
-                        color: theme.colorScheme.onBackground,
+                        color: theme.colorScheme.onSurface,
                       ),
                     ),
                     const Gap(10),
