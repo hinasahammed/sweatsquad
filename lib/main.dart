@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Sweat's Squad",
+      title: "Sweat's  Squad",
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       getPages: Routes.getRoute(),
